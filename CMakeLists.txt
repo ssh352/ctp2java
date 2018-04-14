@@ -25,7 +25,7 @@ set(CMAKE_SWIG_FLAGS "-package" "com.scalats.ctp")
 set_property(SOURCE ctp.i PROPERTY CPLUSPLUS ON)
 swig_add_module(ctp java ctp.i)
 swig_link_libraries(ctp ${CTP_LIBS})
-set_property(TARGET ctp PROPERTY LINK_FLAGS "-Wl,-rpath,/tmp/com.scalats.ctp")
+set_property(TARGET ctp PROPERTY LINK_FLAGS "-Wl,-rpath,/tmp/com.scalats/ctp/lib")
 
 set(JAVA_JAR_FILE "com.scalats.ctp.jar")
 set(JAVA_CLS_DIR ${CMAKE_CURRENT_BINARY_DIR}/cls)

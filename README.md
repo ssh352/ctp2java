@@ -1,9 +1,7 @@
-ctp2java
-=====
+# ctp2java
 
 > Java bindings for ctp
 
-Build
------
+## Build
 
     $ ./build.sh

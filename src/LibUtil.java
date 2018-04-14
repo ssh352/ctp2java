@@ -7,10 +7,9 @@ import java.io.InputStream;
 
 class LibUtil {
   public static void loadLib(final String name) throws IOException {
-    File f = new File("/tmp/com.scalats.ctp/" + name);
+    File f = new File("/tmp/com.scalats/ctp/lib/" + name);
     if (!f.exists()) {
       f.getParentFile().mkdirs();
-      f.deleteOnExit();
 
       InputStream is = LibUtil.class.getResourceAsStream("/" + name);
       FileOutputStream os = new FileOutputStream(f);
@@ -23,7 +22,8 @@ class LibUtil {
       is.close();
       os.close();
     }
+    f.deleteOnExit();
 
-    System.load(f.getAbsolutePath());
+    System.load(f.getPath());
   }
 }
